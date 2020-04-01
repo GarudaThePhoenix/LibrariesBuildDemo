@@ -15,3 +15,16 @@ steps:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: NuGetCommand@2
+  inputs:
+    command: pack
+    basePath: $(Build.SourcesDirectory)/DataAccessInterface/DataAccessInterface/bin/release
+    packagesToPack: $(Build.SourcesDirectory)/DataAccessInterface/DataAccessInterface.nuspec
+    packDestination: $(Build.StagingDirectory)
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: $(Build.StagingDirectory)
+    ArtifactName: 'NuGetPackage'
+    publishLocation: Container
