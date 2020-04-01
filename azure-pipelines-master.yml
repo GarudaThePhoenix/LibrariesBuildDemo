@@ -36,5 +36,5 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: push
-    publishVstsFeed: 'LibrarliesBuildDemo/Libraries'
+    publishVstsFeed: 'LibrariesBuildDemo/Libraries'
     packagesToPush: $(Build.StagingDirectory)\DataAccessInterface*.nupkg
