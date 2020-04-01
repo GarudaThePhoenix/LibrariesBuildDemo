@@ -24,12 +24,12 @@ steps:
   inputs:
     command: pack
     basePath: $(Build.SourcesDirectory)/DataAccessInterface/DataAccessInterface/bin/release
-    packagesToPack: $(Build.SourcesDirectory)/DataAccessInterface
+    packagesToPack: $(Build.SourcesDirectory)/DataAccessInterface/DataAccessInterface.nuspec
     packDestination: $(Build.StagingDirectory)
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: $(Build.StagingDirectory)/*.nupkg
+    PathtoPublish: $(Build.StagingDirectory)
     ArtifactName: 'NuGetPackage'
     publishLocation: Container
 
@@ -37,4 +37,4 @@ steps:
   inputs:
     command: push
     publishVstsFeed: 'Libraries'
-    packagesToPush: $(Build.StagingDirectory)/*.nupkg
+    packagesToPush: $(Build.StagingDirectory)
