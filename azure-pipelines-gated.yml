@@ -1,5 +1,18 @@
+pr:
+  branches:
+    include:
+      - dev
+  paths:
+    include:
+      - DataAccessInterface
+
 trigger:
-- "*"
+  branches:
+    include:
+    - dev
+  paths:
+    include:
+      - DataAccessInterface
 
 pool:
   vmImage: 'windows-2019'
