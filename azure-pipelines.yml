@@ -2,7 +2,7 @@ trigger:
 - "*"
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'windows-2019'
 
 variables:
   solution: 'DataAccessInterface/DataAccessInterface.sln'
@@ -11,7 +11,7 @@ variables:
 
 steps:
 - task: MSBuild@1
-    inputs:
-      solution: '$(solution)'
-      platform: '$(buildPlatform)'
-      configuration: '$(buildConfiguration)'
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
