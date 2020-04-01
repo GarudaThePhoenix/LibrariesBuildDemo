@@ -37,4 +37,4 @@ steps:
   inputs:
     command: push
     publishVstsFeed: 'Libraries'
-    packagesToPush: $(Build.StagingDirectory)
+    packagesToPush: $(Build.StagingDirectory)\DataAccessInterface*.nupkg
