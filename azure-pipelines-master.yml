@@ -24,7 +24,7 @@ steps:
   inputs:
     command: pack
     basePath: $(Build.SourcesDirectory)/DataAccessInterface/DataAccessInterface/bin/release
-    packagesToPack: $(Build.SourcesDirectory)/DataAccessInterface/DataAccessInterface.nuspec
+    packagesToPack: $(Build.SourcesDirectory)/DataAccessInterface
     packDestination: $(Build.StagingDirectory)
 
 - task: PublishBuildArtifacts@1
