@@ -29,11 +29,11 @@ steps:
     command: pack
     basePath: $(Build.SourcesDirectory)/DataAccessInterface/DataAccessInterface/bin/release
     packagesToPack: $(Build.SourcesDirectory)/DataAccessInterface/DataAccessInterface.nuspec
-    packDestination: $(Build.StagingDirectory)
+    packDestination: $(Build.StagingDirectory)\NuGetPackage
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: $(Build.StagingDirectory)
+    PathtoPublish: $(Build.StagingDirectory)\NuGetPackage
     ArtifactName: 'NuGetPackage'
     publishLocation: Container
 
