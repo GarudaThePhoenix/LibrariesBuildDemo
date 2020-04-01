@@ -20,6 +20,10 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: ResharperCli@2
+  inputs:
+    solutionOrProjectPath: '$(solution)' 
+
 - task: NuGetCommand@2
   inputs:
     command: pack
