@@ -1,0 +1,35 @@
+trigger:
+- "*"
+
+pool:
+  vmImage: 'windows-2019'
+
+variables:
+  solution: 'DataAccessInterface/DataAccessInterface.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: NuGetToolInstaller@0
+  inputs:
+    versionSpec: '4.9.2'
+
+- task: MSBuild@1
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: NuGetCommand@2
+  inputs:
+    command: pack
+    basePath: $(Build.SourcesDirectory)/DataAccessInterface/DataAccessInterface/bin/release
+    packagesToPack: $(Build.SourcesDirectory)/DataAccessInterface/DataAccessInterface.nuspec
+    packDestination: $(Build.StagingDirectory)
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: $(Build.StagingDirectory)
+    ArtifactName: 'NuGetPackage'
+    publishLocation: Container
+

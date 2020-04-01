@@ -1,8 +1,10 @@
-﻿namespace DataAccess
+﻿using DataAccessInterface;
+
+namespace DataAccess
 {
-    public class DataAccessHelper
+    public class DataAccessHelper : IRepository
     {
-        public string DoSomething()
+        public string DoSomeWork()
         {
             return $"{nameof(DataAccess)}-{nameof(DataAccessHelper)}";
         }
