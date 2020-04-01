@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>DataAccessInterface</id>
+    <title>DataAccessInterface</title>
+    <version>1.0.0</version>
+    <description>Sample Data Access Interface</description>
+    <authors>Nandan Mathure, Anurag Sareen</authors>
+    <projectUrl>https://github.com/GarudaThePhoenix/LibrariesBuildDemo</projectUrl>
+    <license type="expression">MIT</license>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <repository type="git" url="https://github.com/GarudaThePhoenix/LibrariesBuildDemo" branch="develop" />
+    <dependencies>
+      <group targetFramework="net48">
+      </group>
+    </dependencies>
+  </metadata>
+
+  <files>
+    <file src="DataAccessInterface.dll" target="lib\net48" />
+  </files>
+</package>
