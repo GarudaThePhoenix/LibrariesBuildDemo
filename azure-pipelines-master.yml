@@ -29,6 +29,12 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: $(Build.StagingDirectory)
+    PathtoPublish: $(Build.StagingDirectory)/DataAccessInterface*.nuget
     ArtifactName: 'NuGetPackage'
     publishLocation: Container
+
+- task: NuGetCommand@2
+  inputs:
+    command: push
+    publishVstsFeed: 'Libraries'
+    packagesToPush: $(Build.StagingDirectory)/DataAccessInterface*.nuget
